@@ -1,0 +1,6 @@
+{
+  "name": "BachatBiz",
+  "description": "BachatBiz - Save Smart. Grow Your Business. Digital financial assistance and business management platform for rural entrepreneurs and small business owners in Maharashtra.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

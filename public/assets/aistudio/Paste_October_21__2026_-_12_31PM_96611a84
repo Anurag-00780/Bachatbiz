@@ -1,0 +1,1452 @@
+MASTER DEVELOPMENT PROMPT — BachatBiz
+
+YOUR ROLE
+
+Act as a senior full-stack engineer, UI/UX designer, product architect, database engineer, security engineer, and QA tester.
+
+Your task is to build a complete, polished, responsive, production-minded web application called BachatBiz.
+
+Do not stop at planning, generating mockups, or writing sample code. Inspect the existing workspace, implement the complete application, run it locally, test its functionality, fix errors, and document how to use it.
+
+Every major button, form, navigation link, calculator, dashboard card, menu, and interactive component must work.
+
+Do not replace functional requirements with static mockups. If a real third-party service requires credentials, implement a clearly labeled working local alternative and document the integration requirements.
+
+---
+
+1. PROJECT IDENTITY
+
+Project name: BachatBiz
+
+Tagline: Save Smart. Grow Your Business.
+
+Full description:
+
+BachatBiz is a digital financial assistance and business management platform designed to help rural entrepreneurs, shopkeepers, farmers, artisans, and small business owners in Maharashtra manage their finances, discover financial support schemes, plan business growth, and improve their financial literacy.
+
+The application combines business accounting, financial planning, government scheme discovery, loan calculations, educational resources, and an AI-assisted financial learning experience.
+
+Target users:
+
+- Rural entrepreneurs.
+- Small shopkeepers.
+- Women entrepreneurs.
+- Farmers and agricultural businesses.
+- Artisans and handicraft businesses.
+- Local service providers.
+- Early-stage small businesses.
+
+Primary language: English.
+Secondary language: Marathi.
+
+The entire application must consistently use the name BachatBiz.
+
+Use BachatBiz in the browser title, favicon concept, header, logo, authentication screens, dashboard, sidebar, footer, README, and documentation.
+
+Do not use the old project name Rural FinTech Saathi anywhere in the finished product.
+
+---
+
+2. WORKSPACE AND DEVELOPMENT RULES
+
+Before coding:
+
+1. Inspect the current workspace and existing files.
+2. Identify the framework, dependencies, and existing implementation.
+3. Preserve useful existing code.
+4. Create a sensible project structure.
+5. Establish a working development environment.
+6. Implement features incrementally.
+7. Run the application and inspect its behavior.
+8. Test critical user flows and fix failures.
+
+If the workspace is empty, initialize a new project.
+
+Do not unnecessarily rewrite an existing working project.
+
+Do not stop after creating a plan. Continue implementing the application until the acceptance criteria are satisfied.
+
+If something cannot be completed because an external credential or service is unavailable, implement the best functional local alternative and explain the limitation.
+
+---
+
+3. TECHNOLOGY STACK
+
+Use the following stack unless the existing workspace requires a compatible alternative:
+
+Frontend:
+
+- Next.js with App Router.
+- React.
+- TypeScript with strict type checking.
+- Tailwind CSS.
+- shadcn/ui for accessible interface components.
+- Lucide icons.
+- Recharts for financial charts.
+- React Hook Form and Zod for forms and validation.
+
+Backend:
+
+- Next.js server-side API routes or server actions.
+- Prisma ORM.
+- SQLite for local development.
+- A clean data-access layer that can later support PostgreSQL.
+
+Authentication:
+
+- Secure email and password authentication.
+- A compatible authentication library, such as Auth.js, where appropriate.
+- Proper password hashing if passwords are managed by the application.
+- Server-side session verification.
+- Protected routes and server-side authorization.
+
+Testing:
+
+- Vitest for unit tests.
+- React Testing Library where appropriate.
+- Playwright for critical end-to-end flows if the environment supports it.
+
+Other:
+
+- CSV export.
+- Internationalization for English and Marathi.
+- ESLint and TypeScript checks.
+
+Use compatible stable package versions.
+
+The application must run locally without requiring paid APIs.
+
+Never expose database credentials, authentication secrets, or AI API keys in client-side code.
+
+---
+
+4. COMPLETE UI AND DESIGN SYSTEM
+
+Build a professional fintech interface that feels like a real financial product.
+
+Visual identity:
+
+- Primary color: deep forest green.
+- Secondary color: teal.
+- Background: clean off-white or very light neutral.
+- Accent: restrained saffron.
+- Text: accessible dark neutral.
+- Cards: subtle borders, consistent radii, and restrained shadows.
+- Typography: highly readable on desktop and mobile.
+
+Create reusable design tokens for:
+
+- Colors.
+- Typography.
+- Spacing.
+- Border radii.
+- Shadows.
+- Buttons.
+- Form fields.
+- Cards.
+- Navigation.
+- Status indicators.
+- Dialogs.
+- Toast notifications.
+
+Use a consistent spacing system and visual hierarchy.
+
+Avoid excessive gradients, unnecessary animations, oversized empty spaces, and generic template-like layouts.
+
+Animations should be subtle and respect reduced-motion preferences.
+
+Accessibility requirements:
+
+- Keyboard navigation.
+- Visible focus indicators.
+- Appropriate contrast.
+- Accessible labels.
+- Semantic HTML.
+- Screen-reader-friendly forms.
+- Clear validation messages.
+
+Responsive requirements:
+
+- Desktop: full sidebar and spacious dashboard.
+- Tablet: compact navigation and responsive grids.
+- Mobile: collapsible navigation, stacked cards, touch-friendly controls, and usable forms.
+
+Support common viewport widths, including 360px mobile screens.
+
+Create polished loading skeletons, empty states, error states, success feedback, confirmation dialogs, and toast notifications.
+
+Do not use emojis as substitutes for professional UI icons.
+
+---
+
+5. BRANDING AND GLOBAL NAVIGATION
+
+Create a consistent BachatBiz brand mark using a wallet, savings, or growth-inspired icon and the BachatBiz wordmark.
+
+The application should have two navigation experiences.
+
+Public navigation
+
+Display:
+
+- BachatBiz logo.
+- Home.
+- Features.
+- How It Works.
+- Financial Education.
+- About.
+- Language selector.
+- Login.
+- Create Account.
+
+Authenticated application navigation
+
+Create a responsive sidebar with:
+
+1. Dashboard
+2. Business Profile
+3. Transactions
+4. Financial Planner
+5. Loan Calculator
+6. Government Schemes
+7. Insurance & Protection
+8. Financial Learning
+9. AI Financial Assistant
+10. Reports
+11. Settings
+12. Help & Support
+13. Logout
+
+Include:
+
+- Active route highlighting.
+- Collapsible sidebar on desktop where appropriate.
+- Mobile navigation drawer.
+- Sidebar tooltips when collapsed.
+- User avatar and account menu.
+- Breadcrumbs on nested pages.
+- Notifications or useful status indicators.
+- Global search where appropriate.
+
+Every navigation link must lead to an implemented page.
+
+Every interactive navigation control must work.
+
+Do not create dead links or buttons that only look interactive.
+
+---
+
+6. PUBLIC LANDING PAGE
+
+Route: /
+
+Build a complete public homepage.
+
+Header
+
+Include:
+
+- BachatBiz logo.
+- Navigation links.
+- English/Marathi language selector.
+- Login button.
+- Primary Create Account button.
+
+Hero section
+
+Headline:
+
+"Manage Your Money. Grow Your Business."
+
+Supporting text:
+
+"BachatBiz helps small business owners track income and expenses, plan loan repayments, discover financial support schemes, and make smarter financial decisions."
+
+Primary CTA: Get Started.
+Secondary CTA: Explore Features.
+
+Include a polished product dashboard preview or an original illustrative composition.
+
+Do not invent customer testimonials or claim verified user outcomes.
+
+Feature section
+
+Create feature cards for:
+
+- Business income and expense management.
+- Loan EMI calculator.
+- Government scheme discovery.
+- Financial planning.
+- Financial literacy.
+- AI financial assistant.
+
+Each card should navigate to a relevant public information section or authentication flow.
+
+How it works
+
+Show a simple four-step process:
+
+1. Create your business profile.
+2. Record your income and expenses.
+3. Explore financial tools and support options.
+4. Use your financial insights to plan business growth.
+
+Additional sections
+
+Include:
+
+- Benefits for rural entrepreneurs.
+- Financial literacy preview.
+- English and Marathi language support.
+- Frequently asked questions.
+- Privacy and security explanation.
+- Footer with useful links.
+
+Ensure the homepage looks excellent on mobile and desktop.
+
+---
+
+7. LOGIN, REGISTRATION, AND ACCOUNT MANAGEMENT
+
+Implement a complete authentication experience.
+
+Routes:
+
+- /login
+- /register
+- /forgot-password
+- /reset-password
+- /verify-email if supported by the configured authentication system
+- /settings/security
+
+Registration
+
+Provide fields for:
+
+- Full name.
+- Email address.
+- Password.
+- Confirm password.
+- Optional preferred language.
+
+Add:
+
+- Required-field validation.
+- Email format validation.
+- Password strength guidance.
+- Password visibility toggle.
+- Terms and privacy acknowledgment.
+- Clear server error and success messages.
+
+After successful registration, create the appropriate account and guide the user to onboarding.
+
+Do not require unnecessary personal or banking information.
+
+Login
+
+Provide:
+
+- Email and password.
+- Show/hide password.
+- Remember-me behavior only if implemented securely.
+- Forgot password link.
+- Link to registration.
+- Clear invalid-credentials feedback.
+- Loading state during submission.
+
+Never reveal whether a particular email account exists through overly specific authentication error messages.
+
+Password recovery
+
+Implement a secure password recovery flow using the configured authentication provider.
+
+If email delivery is not configured, do not pretend an email was sent. Document the limitation and provide a safe local development workflow.
+
+Authentication security
+
+Implement:
+
+- Secure session management.
+- Server-side authentication checks.
+- Proper password hashing if applicable.
+- Secure cookie configuration.
+- Logout that invalidates the session.
+- Login rate limiting where appropriate.
+- CSRF protection where applicable.
+- Authorization checks on every user-specific data operation.
+
+Do not store plaintext passwords or authentication tokens in browser local storage.
+
+Do not hardcode production credentials.
+
+Demo experience
+
+Provide an optional, clearly labeled demo mode for college presentations.
+
+If a demo account is created, document its actual credentials safely in the development README.
+
+Demo access must not bypass authentication or authorization in production.
+
+---
+
+8. ONBOARDING AND BUSINESS PROFILE
+
+Routes:
+
+- /onboarding
+- /profile
+
+After first registration, show a short onboarding wizard.
+
+Step 1: Personal preferences.
+
+- Display name.
+- Preferred language.
+
+Step 2: Business details.
+
+- Business name.
+- Business category.
+- District in Maharashtra.
+- Rural or semi-urban location.
+- Business stage.
+
+Step 3: Financial goals.
+
+- Main business goal.
+- Optional funding requirement.
+- Optional savings target.
+- Optional monthly income and expense estimates.
+
+Step 4: Review and complete.
+
+Include a progress indicator, Back and Continue buttons, input validation, and the ability to edit the profile later.
+
+Make optional financial questions clearly optional.
+
+Do not collect Aadhaar numbers, PAN numbers, bank passwords, OTPs, UPI PINs, or unnecessary sensitive information.
+
+Persist the completed profile in the database.
+
+Use the profile to personalize relevant educational content and scheme discovery, not to make unsupported financial eligibility decisions.
+
+---
+
+9. DASHBOARD
+
+Route: /dashboard
+
+Create a high-quality, interactive financial dashboard.
+
+Summary cards
+
+Display:
+
+- Total income for the selected period.
+- Total expenses.
+- Net profit.
+- Savings progress.
+- Number of recorded transactions.
+- Upcoming planned financial obligations, if entered.
+
+Each card should show:
+
+- Current value.
+- Appropriate period label.
+- Optional comparison with a previous period when real comparison data exists.
+
+Never fabricate percentage changes.
+
+Charts
+
+Include:
+
+- Monthly income versus expenses.
+- Profit trend.
+- Expense breakdown by category.
+- Savings goal progress.
+
+Charts must update based on actual stored transaction data.
+
+Display meaningful empty states for new users.
+
+Quick actions
+
+Provide functional buttons for:
+
+- Add Income.
+- Add Expense.
+- Calculate EMI.
+- Find Government Schemes.
+- Create Budget.
+- Ask Financial Assistant.
+
+Other sections
+
+Include:
+
+- Recent transactions.
+- Saved schemes.
+- Financial learning progress.
+- Useful financial education tips.
+- A summary of business profile completion.
+
+Add date-range filtering where appropriate.
+
+Use Indian currency formatting with the ₹ symbol and Indian number grouping.
+
+---
+
+10. BUSINESS INCOME AND EXPENSE MANAGER
+
+Route: /transactions
+
+This module is a core requirement and must work completely.
+
+Transaction management
+
+Users must be able to:
+
+- Add income.
+- Add expenses.
+- Edit transactions.
+- Delete transactions with confirmation.
+- Search transactions.
+- Filter by date range.
+- Filter by transaction type.
+- Filter by category.
+- Sort transaction records.
+- View transaction details.
+
+Each transaction should support:
+
+- Description.
+- Amount.
+- Income or expense type.
+- Category.
+- Transaction date.
+- Optional notes.
+
+Suggested income categories:
+
+- Product sales.
+- Service income.
+- Agricultural income.
+- Other income.
+
+Suggested expense categories:
+
+- Inventory.
+- Raw materials.
+- Rent.
+- Transportation.
+- Utilities.
+- Wages.
+- Marketing.
+- Equipment.
+- Other expenses.
+
+Use validated forms and appropriate date and currency inputs.
+
+Financial calculations
+
+Calculate:
+
+Total Income = Sum of income transactions.
+
+Total Expenses = Sum of expense transactions.
+
+Net Profit = Total Income − Total Expenses.
+
+Show a negative result clearly when expenses exceed income.
+
+Keep calculations consistent across the dashboard, reports, and financial planner.
+
+Do not duplicate or independently implement conflicting calculation logic.
+
+Persistence and privacy
+
+Store transactions in the database and associate each record with the authenticated user.
+
+A user must never access, edit, export, or delete another user's transactions.
+
+Add pagination for larger datasets.
+
+CSV export
+
+Allow the user to export filtered transaction records.
+
+Ensure correct CSV formatting and safe handling of potentially dangerous spreadsheet formulas.
+
+---
+
+11. BUSINESS FINANCIAL PLANNER
+
+Route: /financial-planner
+
+Build a practical business planning workspace.
+
+Monthly budget
+
+Allow users to define:
+
+- Expected income.
+- Inventory budget.
+- Rent.
+- Transport.
+- Utilities.
+- Wages.
+- Marketing.
+- Other expenses.
+- Target savings.
+
+Cash flow
+
+Display:
+
+- Opening balance when provided.
+- Income.
+- Expenses.
+- Net cash flow.
+- Closing estimate where the required data is available.
+
+Distinguish recorded historical transactions from future estimates.
+
+Savings goals
+
+Allow users to:
+
+- Create a savings goal.
+- Define a target amount.
+- Enter the current saved amount.
+- Set a target date.
+- Update progress.
+- Edit or delete the goal.
+
+Show the amount remaining and the required savings pace when sufficient information exists.
+
+Business performance
+
+Display:
+
+- Income versus expense charts.
+- Profit trend.
+- Expense distribution.
+- Budget versus actual spending.
+- Monthly summary.
+
+Use real data from the database.
+
+Avoid presenting projections as guaranteed future results.
+
+---
+
+12. LOAN EMI CALCULATOR
+
+Route: /calculator
+
+Build a fully working calculator.
+
+Inputs:
+
+- Loan principal in rupees.
+- Annual interest rate.
+- Loan tenure in months or years.
+- Optional loan label for comparing scenarios.
+
+Outputs:
+
+- Monthly EMI.
+- Total repayment.
+- Total interest.
+- Repayment breakdown.
+- Amortization schedule.
+
+Use the standard reducing-balance EMI formula:
+
+EMI = P × r × (1 + r)^n / ((1 + r)^n − 1)
+
+Where:
+
+- P is the principal.
+- r is the monthly interest rate expressed as a decimal.
+- n is the number of monthly payments.
+
+If the interest rate is zero, calculate EMI as principal divided by the number of payments.
+
+Handle invalid values, extreme inputs, and numerical edge cases.
+
+Use consistent currency rounding.
+
+Loan comparison
+
+Allow users to compare at least two hypothetical loan scenarios.
+
+Show the difference in:
+
+- Monthly EMI.
+- Total interest.
+- Total repayment.
+- Repayment duration.
+
+Add a chart showing principal versus interest.
+
+Affordability estimate
+
+Allow the user to enter estimated monthly business income and expenses.
+
+Calculate the estimated monthly surplus and show how a proposed EMI compares with that surplus.
+
+Clearly label this as an educational estimate, not a lender approval or definitive affordability decision.
+
+Include a sample scenario with illustrative assumptions.
+
+Do not present illustrative interest rates as current real lender offers.
+
+---
+
+13. GOVERNMENT SCHEME AND LOAN FINDER
+
+Routes:
+
+- /schemes
+- /schemes/[id]
+
+Build a searchable and filterable financial support directory.
+
+Search and filters
+
+Support:
+
+- Scheme name or keyword.
+- Business category.
+- Entrepreneur category.
+- Relevant location.
+- Type of financial support.
+- Funding requirement, where reliable information is available.
+- Eligibility criteria.
+
+Scheme cards
+
+Each card should show:
+
+- Official scheme name.
+- Short description.
+- Intended beneficiaries.
+- Relevant benefits.
+- Eligibility summary.
+- Source or verification status.
+- Last-verified date when available.
+- View Details button.
+- Save Scheme button.
+
+Scheme detail page
+
+Include:
+
+- Overview.
+- Eligibility requirements.
+- Benefits and limitations.
+- Required documents.
+- Application steps.
+- Official source.
+- Official application link.
+- Last-verified date.
+- Disclaimer.
+
+Scheme data integrity
+
+Use a structured database.
+
+Only label a scheme as verified after checking its information against an authoritative source.
+
+If live verification is unavailable, mark the record as illustrative or requiring verification.
+
+Never invent:
+
+- Subsidy amounts.
+- Interest rates.
+- Eligibility requirements.
+- Application deadlines.
+- Loan approval guarantees.
+- Official URLs.
+
+Use official government and authorized institution sources.
+
+Implement server-side search and filtering when appropriate.
+
+Users should be able to bookmark and remove bookmarked schemes.
+
+Personalized matching should explain why a scheme might be relevant, without falsely claiming that the user qualifies.
+
+---
+
+14. INSURANCE AND FINANCIAL PROTECTION
+
+Route: /insurance
+
+Create an educational financial protection module.
+
+Include:
+
+- Business insurance basics.
+- Crop insurance information for relevant agricultural users.
+- Accident and personal risk protection concepts.
+- Insurance terminology.
+- Premium and coverage explanations.
+- Exclusions and claim-condition checklists.
+- Official information links where verified.
+
+Allow users to bookmark useful resources.
+
+Do not claim that an insurance product is guaranteed to be the best choice.
+
+Do not imply that the application sells policies or processes claims.
+
+Clearly distinguish general education from product-specific recommendations.
+
+---
+
+15. FINANCIAL LITERACY ACADEMY
+
+Routes:
+
+- /learn
+- /learn/[id]
+
+Create an interactive learning centre.
+
+Topics:
+
+1. UPI and digital payments.
+2. Safe mobile banking.
+3. Understanding business loans.
+4. Interest rates and EMI.
+5. Budgeting and bookkeeping.
+6. Savings and financial planning.
+7. Insurance fundamentals.
+8. Government financial schemes.
+9. Recognizing financial fraud.
+10. Managing small-business cash flow.
+
+Every lesson must contain:
+
+- Title and category.
+- Beginner-friendly explanation.
+- Relevant business example.
+- Step-by-step guidance.
+- Short quiz.
+- Answer explanations.
+- Score.
+- Completion status.
+
+Store learning progress for authenticated users.
+
+Add a dashboard summary showing completed lessons and quiz results.
+
+Write original educational content in English and Marathi.
+
+Ensure the Marathi text is readable and uses proper Unicode.
+
+Include fraud-prevention guidance:
+
+- Never share OTPs or UPI PINs.
+- Never disclose banking passwords.
+- Verify payment requests and beneficiary details.
+- Be cautious about unsolicited loan offers and advance-fee scams.
+
+---
+
+16. AI FINANCIAL ASSISTANT
+
+Route: /chatbot
+
+Create a conversational assistant named "BachatBiz Financial Assistant."
+
+It should answer questions about:
+
+- Understanding loans.
+- Calculating EMI.
+- Managing income and expenses.
+- Budgeting.
+- Government scheme discovery.
+- Digital payment safety.
+- Insurance fundamentals.
+- Financial literacy lessons.
+- Using BachatBiz features.
+
+Chat interface
+
+Include:
+
+- Conversation panel.
+- Message history.
+- User and assistant message styles.
+- Input field.
+- Send button.
+- Suggested questions.
+- Loading indicator.
+- Clear conversation control.
+- English and Marathi responses.
+
+Implementation
+
+Implement a useful rule-based assistant first.
+
+It must work without a paid AI API.
+
+If an AI provider is configured:
+
+- Use server-side API calls.
+- Keep credentials in environment variables.
+- Validate and limit requests.
+- Handle timeouts and service errors.
+- Fall back to rule-based answers if the AI service is unavailable.
+
+Use the actual scheme database and educational content as the source of factual answers when possible.
+
+Never invent official scheme details or promise loan approval.
+
+Do not treat chatbot-generated content as a substitute for a qualified financial professional.
+
+If users ask for account-specific financial advice, provide cautious educational explanations and make assumptions explicit.
+
+---
+
+17. REPORTS AND ANALYTICS
+
+Route: /reports
+
+Build a reporting section that uses the same financial records as the dashboard and transaction manager.
+
+Include:
+
+- Monthly income report.
+- Monthly expense report.
+- Profit and loss summary.
+- Expense category breakdown.
+- Transaction history.
+- Savings goal progress.
+- Budget versus actual comparison.
+
+Allow filtering by date range.
+
+Provide CSV export for appropriate reports.
+
+Use consistent calculations, currency formatting, and date formatting.
+
+Do not display invented analytics.
+
+When data is insufficient, display a clear empty state.
+
+Provide printable reports using a clean print stylesheet if feasible.
+
+---
+
+18. MULTILINGUAL EXPERIENCE
+
+Implement an application-wide English and Marathi language selector.
+
+Translate:
+
+- Navigation.
+- Buttons.
+- Form labels.
+- Validation messages.
+- Dashboard.
+- Financial calculators.
+- Transaction management.
+- Financial planner.
+- Learning interface.
+- Chatbot interface.
+- Settings.
+- Common notifications.
+- Privacy and financial disclaimers.
+
+Use a maintainable translation system rather than scattered conditional strings.
+
+Preserve the user's language preference across sessions where appropriate.
+
+Do not translate official scheme names inaccurately.
+
+If a particular verified scheme description is not available in Marathi, show the available official information and clearly indicate the translation limitation.
+
+Do not leave major parts of the interface untranslated.
+
+---
+
+19. SETTINGS AND ACCOUNT MANAGEMENT
+
+Route: /settings
+
+Include:
+
+- Personal profile.
+- Business profile.
+- Language preference.
+- Theme preference if supported.
+- Notification preferences if notifications exist.
+- Account security.
+- Change password through the configured authentication system.
+- Export personal financial data.
+- Account deletion workflow.
+
+Account deletion must require confirmation and properly handle associated user data according to the documented retention policy.
+
+Do not create a button that claims to delete data without actually performing the operation.
+
+Never expose private account data through client-side query parameters or unprotected APIs.
+
+---
+
+20. HELP AND SUPPORT
+
+Route: /help
+
+Include:
+
+- Searchable FAQ.
+- Common usage instructions.
+- Financial calculator guidance.
+- Scheme-finder guidance.
+- Digital banking safety resources.
+- Contact or support form.
+
+Validate form submissions.
+
+If no real support delivery mechanism is configured, explicitly label the form as a demonstration and do not pretend that a message was sent to a real support team.
+
+Provide useful error messages and recovery instructions.
+
+---
+
+21. DATABASE DESIGN
+
+Use Prisma and SQLite for local development.
+
+Create appropriate models for:
+
+- User.
+- Session or authentication-related records as required by the chosen authentication provider.
+- EntrepreneurProfile.
+- Transaction.
+- Budget.
+- SavingsGoal.
+- GovernmentScheme.
+- SchemeBookmark.
+- LearningModule.
+- QuizQuestion.
+- QuizAttempt.
+- LearningProgress.
+- FinancialResource.
+- ChatConversation or session-scoped chat history where appropriate.
+
+Define:
+
+- Primary keys.
+- Foreign keys.
+- Relationships.
+- Created and updated timestamps.
+- Suitable indexes.
+- Appropriate uniqueness constraints.
+
+Associate every user-specific record with the correct user.
+
+Use safe numeric representations for money, preferably integer paise for stored transaction amounts.
+
+Keep monetary calculations centralized and consistent.
+
+Create migrations and a database seed script.
+
+Populate the database with:
+
+- Clearly labeled demonstration transactions.
+- Example budgets.
+- Example savings goals.
+- Original educational content.
+- A small collection of scheme records with explicit verification status.
+
+Do not seed real personal data.
+
+---
+
+22. API AND BUSINESS LOGIC
+
+Implement clean, validated server-side operations for:
+
+- Authentication.
+- Profile management.
+- Transactions.
+- Dashboard summaries.
+- Budgets.
+- Savings goals.
+- Loan calculations where server execution is required.
+- Scheme search.
+- Scheme bookmarks.
+- Learning progress.
+- Quiz submissions.
+- Reports.
+- AI assistant requests.
+- User data export and deletion.
+
+Use the correct HTTP methods and meaningful status codes.
+
+Validate requests on the server even if frontend validation is present.
+
+Check authorization on every operation involving private user records.
+
+Avoid unnecessary API endpoints if a server action is more appropriate for the framework.
+
+Return consistent errors without leaking sensitive internal details.
+
+---
+
+23. COMPLETE ROUTE MAP
+
+Implement and connect the following pages.
+
+Public pages:
+
+- /
+- /features
+- /about
+- /login
+- /register
+- /forgot-password
+- /reset-password
+- /privacy
+- /terms
+
+Authenticated application:
+
+- /onboarding
+- /dashboard
+- /profile
+- /transactions
+- /financial-planner
+- /calculator
+- /schemes
+- /schemes/[id]
+- /insurance
+- /learn
+- /learn/[id]
+- /chatbot
+- /reports
+- /settings
+- /settings/security
+- /help
+
+You may use route groups and layouts to organize the implementation.
+
+Every listed route must render a real page or an intentional redirect.
+
+Implement a custom not-found page and useful error handling.
+
+Do not leave broken links or placeholder pages for core functionality.
+
+---
+
+24. SECURITY AND RESPONSIBLE FINANCIAL DESIGN
+
+Implement:
+
+- Server-side input validation.
+- Secure authentication and session handling.
+- Authorization checks for private data.
+- Safe database access.
+- Environment-based secrets.
+- Secure handling of user-generated text.
+- Rate limiting where appropriate.
+- Safe CSV export.
+- Appropriate error handling.
+- Privacy-conscious logging.
+
+Do not:
+
+- Store plaintext passwords.
+- Collect UPI PINs or OTPs.
+- Expose secret keys to the browser.
+- Claim that a user is guaranteed a loan.
+- Claim that the app is a regulated financial adviser.
+- Invent official scheme data.
+- Make actual payments or transfers.
+- Implement real loan disbursement.
+- Make automated credit approval decisions.
+
+Display a clear financial information disclaimer.
+
+Use verified sources for financial scheme information.
+
+---
+
+25. PERFORMANCE AND ACCESSIBILITY
+
+Optimize:
+
+- Page loading.
+- Image sizes.
+- Component rendering.
+- Database queries.
+- Chart rendering.
+- Mobile usability.
+
+Use pagination for large transaction and scheme lists.
+
+Use semantic HTML and accessible controls.
+
+Avoid layout shifts and oversized assets.
+
+Ensure forms remain usable on small screens.
+
+Respect reduced-motion settings.
+
+---
+
+26. TESTING REQUIREMENTS
+
+Write and execute tests for the following.
+
+Authentication
+
+- Valid registration.
+- Invalid registration inputs.
+- Valid login.
+- Invalid login.
+- Logout.
+- Protected route access.
+- Unauthorized access prevention.
+
+Transactions
+
+- Add income.
+- Add expense.
+- Edit a transaction.
+- Delete a transaction.
+- Search and filtering.
+- Correct total income.
+- Correct total expenses.
+- Correct profit calculation.
+- User data isolation.
+
+Calculator
+
+- Standard EMI calculation.
+- Zero-interest calculation.
+- Invalid principal.
+- Invalid tenure.
+- Invalid interest rate.
+- Loan comparison calculations.
+
+Financial planner
+
+- Budget calculations.
+- Savings goal progress.
+- Income and expense totals.
+- Negative cash flow.
+- Budget versus actual spending.
+
+Scheme finder
+
+- Search.
+- Filters.
+- Scheme detail pages.
+- Bookmarks.
+- Source and verification status.
+- Unauthorized bookmark access.
+
+Other modules
+
+- Language switching.
+- Learning progress.
+- Quiz scoring.
+- Chatbot fallback responses.
+- CSV export.
+- Form validation.
+- Settings updates.
+
+Use automated tests where possible and manually inspect the critical user journey in the browser.
+
+Do not claim tests passed unless they actually ran.
+
+Fix major runtime errors, TypeScript errors, and broken critical flows before completion.
+
+---
+
+27. REQUIRED PROJECT STRUCTURE
+
+Organize the project into logical modules.
+
+Suggested structure:
+
+src/
+app/
+(public)/
+(auth)/
+(dashboard)/
+api/
+components/
+ui/
+layout/
+dashboard/
+transactions/
+planner/
+calculator/
+schemes/
+chatbot/
+learning/
+forms/
+features/
+auth/
+transactions/
+finance/
+schemes/
+learning/
+chatbot/
+lib/
+auth/
+db/
+calculations/
+validation/
+currency/
+i18n/
+messages/
+en/
+mr/
+types/
+
+prisma/
+schema.prisma
+seed.ts
+
+tests/
+unit/
+integration/
+e2e/
+
+public/
+images/
+icons/
+
+The exact structure may be adapted to the framework, but keep modules organized and maintainable.
+
+Do not put the entire application in one large component.
+
+---
+
+28. README AND PROJECT DOCUMENTATION
+
+Create a detailed README.md containing:
+
+- Project title.
+- Problem statement.
+- Objectives.
+- Proposed solution.
+- Feature list.
+- Technology stack.
+- Architecture overview.
+- Database schema overview.
+- Folder structure.
+- Prerequisites.
+- Installation instructions.
+- Environment variable configuration.
+- Database migration instructions.
+- Database seeding instructions.
+- Development server commands.
+- Production build commands.
+- Testing commands.
+- Demo workflow.
+- Security and privacy considerations.
+- Scheme data verification approach.
+- Known limitations.
+- Future enhancements.
+
+Create .env.example with placeholder values only.
+
+Document how to configure authentication and optional AI services.
+
+Ensure setup instructions match the actual implementation.
+
+---
+
+29. DEVELOPMENT EXECUTION PLAN
+
+Follow this sequence while continuing to work in the project workspace.
+
+Phase 1: Inspect the workspace and initialize the application.
+
+Phase 2: Create the BachatBiz brand, design tokens, typography, and reusable UI components.
+
+Phase 3: Implement the landing page, public navigation, registration, login, logout, and route protection.
+
+Phase 4: Implement database models, migrations, and seed data.
+
+Phase 5: Build onboarding, entrepreneur profiles, and the responsive dashboard.
+
+Phase 6: Build transaction management and financial calculations.
+
+Phase 7: Build the financial planner, savings goals, loan calculator, and reports.
+
+Phase 8: Build government scheme discovery, scheme details, and bookmarks.
+
+Phase 9: Build insurance education, financial literacy, quizzes, and learning progress.
+
+Phase 10: Build the financial assistant and bilingual interface.
+
+Phase 11: Complete settings, help, privacy, terms, and account management.
+
+Phase 12: Run tests, check security-sensitive flows, inspect responsive layouts, and fix errors.
+
+Phase 13: Complete documentation and verify the launch process.
+
+After each phase, check that existing features continue to work.
+
+Do not stop after describing these phases. Execute them.
+
+---
+
+30. FINAL ACCEPTANCE CRITERIA
+
+The project is complete only when:
+
+1. BachatBiz branding is consistent throughout the application.
+2. The landing page looks professional.
+3. Login, registration, logout, and protected routes work.
+4. Onboarding and profile editing work.
+5. Navigation works across desktop and mobile.
+6. The dashboard uses actual stored financial data.
+7. Income and expense transactions can be created, edited, and deleted.
+8. Financial calculations are correct.
+9. Budgets and savings goals work.
+10. The EMI calculator handles normal and edge cases.
+11. Scheme search, details, and bookmarks work.
+12. Financial education and quizzes work.
+13. The chatbot works without requiring a paid API.
+14. English and Marathi language switching works.
+15. Reports and CSV exports work.
+16. User-specific data is properly isolated.
+17. Loading, empty, success, and error states are implemented.
+18. Database migrations and seed scripts work.
+19. Automated tests run and critical failures are fixed.
+20. The README explains how to start and test the application.
+21. The project runs locally without mandatory paid services.
+22. No core feature is represented by a nonfunctional placeholder.
+
+---
+
+31. FINAL RESPONSE REQUIRED FROM THE CODING AGENT
+
+When implementation is finished, provide:
+
+- A summary of completed features.
+- The important files and modules created.
+- Database setup status.
+- Authentication implementation details.
+- Tests actually executed and their results.
+- Any remaining issues.
+- Exact terminal commands to start the application.
+- Instructions for accessing the application in a browser.
+- Any credentials needed for a configured demo account, if applicable.
+
+Be honest about incomplete integrations or unavailable services.
+
+Begin by inspecting the existing workspace and then implement the complete BachatBiz application. Prioritize working functionality, consistent design, security, and testability over superficial visual polish.
